@@ -86,6 +86,7 @@ type GameMp = {
 	invoke(hash: string, ...args: any[]): any;
 	joaat(text: string): Hash;
 	joaat(textArray: string[]): Hash[];
+	wait(ms: number): void;
 }
 
 type GuiMp = {
@@ -344,6 +345,9 @@ interface ObjectMp extends EntityMp {
 
 interface PedMp extends EntityMp {
 	spawnPosition: Vector3Mp;
+	taskPlayAnim(animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number,
+		flag: number, playbackRate: number, lockX: boolean, lockY: boolean, lockZ: boolean): void;
+	clearTasks();
 	// TODO
 }
 
@@ -412,6 +416,7 @@ interface PlayerMp extends EntityMp {
 	clearSecondaryTask(): void;
 	clearTasks(): void;
 	clearTasksImmediately(): void;
+	clearPedSecondaryTask(): void;
 	clearWantedLevel(): void;
 	clearWetness(): void;
 	clone(heading: number, networkHandle: boolean, pedHandle: boolean): Handle;
