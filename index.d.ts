@@ -2555,6 +2555,7 @@ interface GamePlayerMp {
 	setAutoGiveParachuteWhenEnterPlane(toggle: boolean): void;
 	setDisableAmbientMeleeMove(toggle: boolean): void;
 	setDispatchCopsForPlayer(toggle: boolean): void;
+	setHealthRechargeMultiplier(regenRate: number): void;
 	setHudAnimStopLevel(toggle: boolean): void;
 	setIgnoreLowPriorityShockingEvents(toggle: boolean): void;
 	setMaxWantedLevel(maxWantedLevel: number): void;
