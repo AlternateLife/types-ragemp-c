@@ -574,7 +574,7 @@ interface PlayerMp extends EntityMp {
 	isInAnySub(): boolean;
 	isInAnyTaxi(): boolean;
 	isInAnyTrain(): boolean;
-	isInAnyVehicle(atGetIn: boolean): boolean;
+	isInAnyVehicle(atGetIn: boolean): number;
 	isInCombat(target: Handle): boolean;
 	isInCoverFacingLeft(): boolean;
 	isInFlyingVehicle(): boolean;
@@ -3290,8 +3290,7 @@ interface ObjectMpPool extends EntityMpPool<ObjectMp> {
 }
 
 interface PedMpPool extends EntityMpPool<PedMp> {
-	"new"(model: RageEnums.Hashes.Ped | Hash, position: Vector3Mp, heading: number,
-		streamInEventHandler?: (ped: PedMp) => void, dimension?: number): PedMp;
+	"new"(model: RageEnums.Hashes.Ped | Hash, position: Vector3Mp, heading: number, dimension?: number): PedMp;
 }
 
 interface PickupMpPool extends EntityMpPool<PickupMp> {
